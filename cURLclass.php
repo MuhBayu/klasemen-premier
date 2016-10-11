@@ -9,8 +9,8 @@
 class cURL
 {
 
-	// private static $api_key; // 
-	public $base_url;
+    // private static $api_key; // 
+    public $base_url;
 
     function __construct($base_url)
 	{
