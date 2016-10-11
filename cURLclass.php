@@ -8,7 +8,7 @@
 
 class cURL
 {
-	private static $api_key; // 
+	// private static $api_key; // 
 	public $base_url;
 
 	function __construct($base_url)
@@ -28,15 +28,17 @@ class cURL
         ));
         $respon = curl_exec($curl); // Response
         //$err = curl_error($curl);
-
         curl_close($curl);
 
-        if (!$respon) {
+        if (!$respon) { 
           	$elor['status'] = 'Gagal';
-          	return json_encode($elor);
+			$hasil = json_encode($elor); // Kalo error ubah pesan error ke dalam JSON
         } else {
-          	return json_decode($respon, true);
+          	$hasil = $respon; 
         }
+		
+		return json_decode($hasil, true); // Langsung ubah ke ARRAY
+
     }
 }
 
