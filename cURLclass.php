@@ -8,15 +8,16 @@
 
 class cURL
 {
+
 	// private static $api_key; // 
 	public $base_url;
 
-	function __construct($base_url)
+    function __construct($base_url)
 	{
 		$this->url = $base_url;
-	}
+    }
 
-	function getData() {
+    function getData() {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -31,10 +32,10 @@ class cURL
         	CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
         ));
         $respon = curl_exec($curl); // Response
-        //$err = curl_error($curl);
+        $err = curl_error($curl);
         curl_close($curl);
 
-        if ($respon === false) { 
+        if ($this->cekErr($respon) || $err) { 
           	$elor['status'] = 'Gagal';
 		$hasil = json_encode($elor); // Kalo error ubah pesan error ke dalam JSON
 			
@@ -45,6 +46,18 @@ class cURL
 		return json_decode($hasil, true); // Langsung ubah ke ARRAY
 
     }
-}
+
+    // Cek Kalo terjadi ERROR
+    function cekErr($str) {
+    	if (strrpos(strip_tags($str), "404")) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+
+
+
+} // END CLASS
 
 ?>
