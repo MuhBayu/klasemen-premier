@@ -43,7 +43,7 @@ class cURL
           	$hasil = $respon; 
         }
 		
-		return json_decode($hasil, true); // Langsung ubah ke ARRAY
+	return json_decode($hasil, true); // Langsung ubah ke ARRAY
 
     }
 
