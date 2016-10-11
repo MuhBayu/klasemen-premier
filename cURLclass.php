@@ -36,7 +36,7 @@ class cURL
 
         if ($respon === false) { 
           	$elor['status'] = 'Gagal';
-			$hasil = json_encode($elor); // Kalo error ubah pesan error ke dalam JSON
+		$hasil = json_encode($elor); // Kalo error ubah pesan error ke dalam JSON
 			
         } else {
           	$hasil = $respon; 
