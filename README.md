@@ -15,4 +15,4 @@ $data // Output dalam bentuk Array
 </pre>
 
 
-<a href="http://bayyu.me/demo/cek-klasemen/" target="_blank"><h2>DEMO</h2></a>
+<a href="http://bayyu.me/demo/cek-klasemen/" target="_blank"><h3>DEMO</h3></a>
