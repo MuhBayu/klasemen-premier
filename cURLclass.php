@@ -20,19 +20,24 @@ class cURL
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => $this->url,
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_SSL_VERIFYPEER => false,
-          CURLOPT_ENCODING => '',
-          CURLOPT_CUSTOMREQUEST => 'GET',
+        	CURLOPT_URL => $this->url,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_SSL_VERIFYPEER => false,
+        	CURLOPT_ENCODING => '',
+        	CURLOPT_CUSTOMREQUEST => 'GET',
+        	CURLOPT_AUTOREFERER    => true,     // set referer on redirect
+        	CURLOPT_CONNECTTIMEOUT => 120,      // timeout on connect
+        	CURLOPT_TIMEOUT        => 120,      // timeout on response
+        	CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
         ));
         $respon = curl_exec($curl); // Response
         //$err = curl_error($curl);
         curl_close($curl);
 
-        if (!$respon) { 
+        if ($respon === false) { 
           	$elor['status'] = 'Gagal';
-		$hasil = json_encode($elor); // Kalo error ubah pesan error ke dalam JSON
+			$hasil = json_encode($elor); // Kalo error ubah pesan error ke dalam JSON
+			
         } else {
           	$hasil = $respon; 
         }
