@@ -5,14 +5,12 @@
 
 
 
-<pre>
 <?php
 require_once('cURLclass.php');
 
 $get 	= 	new cURL('http://bayyu.me/api/klasemen-premier/');
 $data 	= 	$get->getData();
 
-</pre>
 
 
 
