@@ -21,14 +21,14 @@ class cURL
 
         curl_setopt_array($curl, array(
         	CURLOPT_URL => $this->url,
-        	CURLOPT_RETURNTRANSFER => true,
-        	CURLOPT_SSL_VERIFYPEER => false,
-        	CURLOPT_ENCODING => '',
-        	CURLOPT_CUSTOMREQUEST => 'GET',
-        	CURLOPT_AUTOREFERER    => true,     // set referer on redirect
-        	CURLOPT_CONNECTTIMEOUT => 120,      // timeout on connect
-        	CURLOPT_TIMEOUT        => 120,      // timeout on response
-        	CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
+        	CURLOPT_RETURNTRANSFER 	=> true,
+        	CURLOPT_SSL_VERIFYPEER 	=> false,
+        	CURLOPT_ENCODING 	=> '',
+        	CURLOPT_CUSTOMREQUEST 	=> 'GET',
+        	CURLOPT_AUTOREFERER    	=> true,
+        	CURLOPT_CONNECTTIMEOUT 	=> 120,
+        	CURLOPT_TIMEOUT        	=> 120,
+        	CURLOPT_MAXREDIRS      	=> 10,
         ));
         $respon = curl_exec($curl); // Response
         $err = curl_error($curl);
