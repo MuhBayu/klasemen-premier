@@ -3,14 +3,12 @@
 <p>Penggunaan API untuk Cek Klasemen PREMIER LEAGUE</p>
 
 <pre>
-<code>
 <?php
 require_once('cURLclass.php');
 
 $get 	= 	new cURL('http://bayyu.me/api/klasemen-premier/');
 $data 	= 	$get->getData();
 
-</code>
 </pre>
 
 
