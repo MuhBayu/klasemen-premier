@@ -12,9 +12,8 @@ class cURL
     // private static $api_key; // 
     public $base_url;
 
-    function __construct($base_url)
-	{
-		$this->url = $base_url;
+    function __construct($base_url) {
+	$this->url = $base_url;
     }
 
     function getData() {
