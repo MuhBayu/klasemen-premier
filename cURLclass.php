@@ -48,7 +48,7 @@ class cURL
 
     // Cek Kalo terjadi ERROR
     function cekErr($str) {
-    	if (strrpos(strip_tags($str), "404")) {
+    	if (!strrpos(strip_tags($str), "status")) {
     		return true;
     	} else {
     		return false;
