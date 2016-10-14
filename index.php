@@ -1,7 +1,7 @@
 <?php
 require_once('cURLclass.php');
 
-$get 	= 	new cURL('http://bayyu.me/api/klasemen-premier/');
+$get 	= 	new cURL('http://bayuu.net/api/klasemen-premier/');
 $data 	= 	$get->getData();
 
 
